@@ -1,0 +1,51 @@
+1. 18
+
+2-1. 중복이 제외되므로 {'남', '여'} 인 set 구조가 됨(인덱싱 불가)
+2-2. ['남', '여']인 list 구조가 됨
+
+3. 1 2 4 5 
+
+4.  x += y # x = x + y 
+
+5. word = doc.split()
+
+6. dict 는 {}를 사용하며, 내부 값은 key와 value로 이루어져 있다. key : value 로 표현하며, key value 쌍은 ,로 구분한다. (ex: {key1 : value1, key2 : value2, ...,,})
+
+7. Minus = lambda x, y: x - y
+
+8.  tot = sum(x)
+    avg = tot / len(x)
+    return tot, avg
+
+9. 멤버 변수: width, height / 멤버 함수: __init__(생성자 함수), area_calc, circum_calc
+
+10. print(‘first=’, first)는 first 변수에 저장된 참조값 hello를 불러오고, print(‘second=’, id(second))는 second 변수에 저장된 참조값 hello가 위치한 메모리 주소를 불러온다. 또한 first와 second의 값이 'hello'로 동일하기 때문에 같은 메모리 주소를 공유한다. 따라서 print(‘second=’, id(second))와 print(‘first=’, id(first))는 같은 값을 출력할 것이다. 
+
+11-1. mode = 'w': 파일을 쓰기 모드로 열 수 있음, 파일 없을 시 생성, 파일이 이미 존재 시 덮어씀
+11-2. mode = 'a': 파일을 쓰기 모드로 열 수 있음, 파일 없을 시 생성, 파일이 이미 존재 시 파일 끝에 내용 추가 
+
+12. word_cnt.get(ch, 0)은 word_cnt에 'ch'가 없으면 0을, 있으면 'ch'의 해당값을 반환한다. 이 때 wc[ch] = word_cnt.get(ch, 0)+1 이므로 wc[ch]는 word_cnt에 'ch'가 있으면 'ch'의 해당값 +1 의 값을 갖게 된다.
+
+13. readline() 함수는 파일에서 한줄 씩 읽고, 문자열로 반환하며 readlines() 함수는 파일을 모두 읽고 각 줄을 문자열로 담은 리스트를 반환한다.
+
+14. conn: db연결 정보를 갖는 객체, cursor: 쿼리 실행을 도와주는 객체
+
+15.  try ~ except 블록의 용도는 긴 python문에서 에러가 발생 시 에러를 찾고 고치는 과정이 힘드므로 에러를 제외하고 실행시키기 위함이며 역할은 실행 중 에러를 만났을 시 에러문 다음으로 넘어가 실행하는 것이다. 
+
+print('\n유형별 예외처리 ')
+try :
+    div = 1000 / 2.53   
+    print('div = %5.2f' %(div))  # 정상   
+    #div = 1000 / 0                  # 1차 산술적 예외 
+    #f = open('c:/test.txt')          # 2차 파일 열기
+    num = int(input('숫자 입력 : '))  # 3차 기타 예외 
+    print('num =', num)  
+except ZeroDivisionError as e: # 1차 산술적 예외 처리 
+    print('오류 정보 :', e) # 오류 정보  : division by zero
+except FileNotFoundError as e: # 2차 파일 열기 처리 
+    print('오류 정보 : ', e) 
+except Exception as e :        # 3차 기타 예외 처리 
+    print('기타 오류 정보 : ', e)
+finally :
+    print('프로그램 종료 : 항상 실행되는 영역') 
+16. 라. re.compile() 
